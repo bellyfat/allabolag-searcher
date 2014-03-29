@@ -1,0 +1,9 @@
+first:
+    search_term: test
+    found: true
+    reg_number: 012345-6789
+
+second:
+    search_term: apoex
+    found: true
+    reg_number: 556633-4149

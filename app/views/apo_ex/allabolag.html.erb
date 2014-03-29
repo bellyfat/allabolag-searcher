@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="searchbox">
+    <h1>allabolag.se Searcher</h1>
+    <p>Enter an organisation name to fetch its registration number.</p>
+    
+    <%= form_tag("/", method: "get") do %>
+      <%= label_tag(:q, "Reg#:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+    
+    <% if @result %>
+      <h2>Search Result</h2>
+      <p><%= @result %></p>
+    <% end %>
+    
+    <% if @warning %>
+      <p><%= @warning %></p>
+    <% end %>
+
+    <h3>Search History</h3>
+  </div>
+  
+  <% if @searches %>
+    <table>
+      <tr>
+        <th>Search Term</th>
+        <th>Found</th>
+        <th>Reg. Number</th>
+        <th>Created</th>
+        <th>Updated</th>
+      </tr>
+      <% @searches.each do |search| %>
+        <tr>
+          <td><%= search.search_term %></td>
+          <td><%= search.found %></td>
+          <td><%= search.reg_number %></td>
+          <td><%= search.created_at %></td>
+          <td><%= search.updated_at%></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: apoex_allabolag_development
+  pool: 5
+  timeout: 5000
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: apoex_allabolag_test
+  pool: 5
+  timeout: 5000
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: apoex_allabolag_production
+  pool: 5
+  timeout: 5000
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
