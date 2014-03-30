@@ -15,7 +15,7 @@ class ApoExControllerTest < ActionController::TestCase
   end
 
   test "should get json response" do
-    params = { :format => 'json' }
+    params = { :format => 'json', :q => 'test' }
     get :allabolag, params
 
     response = JSON.parse(@response.body)
@@ -23,10 +23,10 @@ class ApoExControllerTest < ActionController::TestCase
   end
 
   test "should get xml response" do
-    params = { :format => 'xml' }
+    params = { :format => 'xml', :q => 'apoex' }
     get :allabolag, params
 
     response = Nokogiri::XML(@response.body)
-    assert_equal "012345-6789", response.at_xpath("/results/result/reg-number").text
+    assert_equal "556633-4149", response.at_xpath("/results/result/reg-number").text
   end
 end

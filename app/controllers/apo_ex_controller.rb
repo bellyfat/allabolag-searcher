@@ -41,7 +41,10 @@ class ApoExController < ApplicationController
         ResultsController.create(search, found, reg_num)
       else
         @result = db_lookup.first.reg_number
+        
       end
+
+      @response = Result.search(search) # The json/xml response to be sent
     end
   end
 
@@ -54,12 +57,12 @@ class ApoExController < ApplicationController
     return doc.css(".hitlistRow").first.at_css(".text11grey6")
   end
 
-  # Generate json and xml from the stored data
+  # Generate json and xml from the search result
   def respond
     respond_to do |format|
       format.html
-      format.xml { render :xml => @searches.to_xml }
-      format.json { render :json => @searches.to_json }
+      format.xml { render :xml => @response.to_xml }
+      format.json { render :json => @response.to_json }
     end
   end
 end
