@@ -1,4 +1,5 @@
-# allabolag.se Searcher
-This is a simple web app that uses allabolag.se to search for the organisation
-registration number of a given organisation.
+allabolag.se Searcher
+---------------------
+
+This is a simple web app that uses allabolag.se to search for the organisation registration number of a given organisation.
 Also includes a ruby client for command line usage.
